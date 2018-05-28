@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+
+
+                <h3 class="card-title">Corporaciones registradas (
+                    <small> {{ _corporacionService.totalCorporaciones }} </small> )</h3>
+                <div class="text-right">
+                    <button (click)="crearCorporacion()" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                            <i class="fa fa-plus"></i>
+                            Crear Corporacion
+                        </button>
+                </div>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let corporacion of corporaciones">
+                            <td>
+                                <input [(ngModel)]="corporacion.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre de la corporacion">
+                            </td>
+                            <td>
+                                <button (click)="guardarCorporacion( corporacion )" class="btn btn-primary">
+                                    <i class="fa fa-save"></i>
+                                </button>
+
+                                <button (click)="borrarCorporacion( corporacion )" class="btn btn-danger">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

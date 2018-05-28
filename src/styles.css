@@ -1,0 +1,15 @@
+#themecolors a {
+    cursor: pointer;
+}
+
+.logo-empresa {
+    width: 60px;
+}
+
+.logo-texto-empresa {
+    width: 100px;
+}
+
+.pointer {
+    cursor: pointer;
+}

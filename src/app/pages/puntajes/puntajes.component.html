@@ -1,0 +1,50 @@
+<div class="row animated fadeIn" *ngIf="cargando">
+    <div class="col-sm-12">
+        <div class="alert alert-warning text-center">
+            <strong>Cargando</strong>
+            <br>
+            <i class="fa fa-refresh fa-spin fa-2x"></i>
+            <br>
+            <span>Espere por favor</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="row animated fadeIn" *ngIf="!cargando">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title"> Puntajes registrados (
+                    <small>{{totalRegistros}}</small>)</h3>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Rutina</th>
+                            <th>Niño(Jugador) </th>
+                            <th>Puntuacion </th>
+                            <th>Puntaje Bueno </th>
+                            <th>Puntaje Malo </th>
+                            <th>Media </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let puntaje of puntajes">
+                            <td>{{puntaje.rutina?.nombre}}</td>
+                            <td>{{puntaje.ninio?.nombre}}</td>
+                            <td>{{puntaje.puntuacion}}</td>
+                            <td>{{puntaje.puntajeBueno}}</td>
+                            <td>{{puntaje.puntajeMalo}}</td>
+                            <td>{{puntaje.media}}</td>
+                            <td>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
