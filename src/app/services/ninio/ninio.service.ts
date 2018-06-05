@@ -15,6 +15,10 @@ export class NinioService {
     const url = URL_SERVICIOS + "ninio";
     return this.http.get(url);
   }
+  cargarNinio(id:string) {
+    const url = URL_SERVICIOS + `ninio/${id}`;
+    return this.http.get(url);
+  }
 
   crearNinio(nombre: string) {
     let url = URL_SERVICIOS + 'ninio';
@@ -24,6 +28,12 @@ export class NinioService {
   }
 
   buscarNinios(termino: string) {}
+
+
+  cargarEstadistica(ninio:string, rutina:string){
+    const url = URL_SERVICIOS + `puntuacion/${ninio}/${rutina}`;
+    return this.http.get(url).map((res:any) => res.puntuaciones);
+  }
 
   borrarNinio(id: string) {
     let url = URL_SERVICIOS + "ninio/" + id;

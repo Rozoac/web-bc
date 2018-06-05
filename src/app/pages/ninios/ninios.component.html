@@ -31,9 +31,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let ninio of ninios">
-                            <td>{{ninio.nombre}}</td>
-                            <td>{{ninio.corporacion.nombre}}</td>
+                        <tr class="cursor" *ngFor="let ninio of ninios">
+                            <td class="cursor" (click)="infoNinio(ninio._id)">{{ninio.nombre}}</td>
+                            <td class="cursor" (click)="infoNinio(ninio._id)">{{ninio.corporacion.nombre}}</td>
                             <td>
                                 <button class="btn btn-primary">
                                     <i class="fa fa-save"></i>   

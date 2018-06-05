@@ -1,0 +1,104 @@
+   <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid r-aside">
+
+               <div class="row">
+              
+                    <!--Little Profile widget-->
+                    <div class="col-lg-12 col-xlg-4">
+                        <div class="card">
+                            <div class="card-body little-profile text-center">
+                                            <h3 class="card-title"> Puntajes {{nombreRutina}} (<small>Partidas Jugadas: {{puntajes?.length}}</small>)</h3>
+
+                            <div class="row">
+  <div class="col-md-12" *ngIf="!cargando">
+    <div style="display: block;">
+    <canvas baseChart width="400" height="150"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                ></canvas>
+    </div>
+  </div>
+  <div class="col-md-6" style="margin-bottom: 10px">
+
+  </div>
+</div>
+                               
+                            </div>
+                        </div>
+        
+                    </div>
+                    <!--Little Profile widget-->
+                </div>
+
+
+
+                <div class="row animated fadeIn" *ngIf="cargando">
+    <div class="col-sm-12">
+        <div class="alert alert-warning text-center">
+            <strong>Cargando</strong>
+            <br>
+            <i class="fa fa-refresh fa-spin fa-2x"></i>
+            <br>
+            <span>Espere por favor</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="row animated fadeIn" *ngIf="!cargando">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title"> Puntajes {{nombreRutina}} (<small>Partidas Jugadas: {{puntajes?.length}}</small>)</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nº</th>
+                            <th>Puntuacion</th>
+                            <th>Puntaje Bueno</th>
+                            <th>Puntaje Malo</th>
+                            <th>Media</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cursor" *ngFor="let puntaje of puntajes; index as i ">
+                            <td class="cursor" >{{i+1}}</td>
+                            <td class="cursor" >{{puntaje.puntuacion}}</td>
+                            <td class="cursor" >{{puntaje.puntajeBueno}}</td>
+                            <td class="cursor" >{{puntaje.puntajeMalo}}</td>
+                            <td class="cursor" >{{puntaje.media}}</td>
+                            <td class="cursor" >{{puntaje.fecha | date}}</td>
+                          
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+        
+   
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> © 2018 Corporación Sindrome de Down </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+     
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->

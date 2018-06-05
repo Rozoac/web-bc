@@ -17,6 +17,9 @@ import { RutinasComponent } from './rutinas/rutinas.component';
 import { NiniosComponent } from './ninios/ninios.component';
 import { CoorporacionesComponent } from './coorporaciones/coorporaciones.component';
 import { PuntajesComponent } from './puntajes/puntajes.component';
+import { InfoNinioComponent } from './info-ninio/info-ninio.component';
+import { EstadisticaComponent } from './estadistica/estadistica.component';
+import { ChartsModule } from 'ng2-charts';
 
 // SERVICIOS
 
@@ -30,9 +33,11 @@ import { PuntajesComponent } from './puntajes/puntajes.component';
     RutinasComponent,
     NiniosComponent,
     CoorporacionesComponent,
-    PuntajesComponent
+    PuntajesComponent,
+    InfoNinioComponent,
+    EstadisticaComponent
   ],
   exports: [DashboardComponent, ProgressComponent, PagesComponent],
-  imports: [SharedModule, CommonModule, PAGES_ROUTES, FormsModule]
+  imports: [SharedModule, CommonModule, PAGES_ROUTES, FormsModule, ChartsModule]
 })
 export class PagesModule {}

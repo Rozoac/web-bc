@@ -17,6 +17,11 @@ export class PuntajeService {
     return this.http.get(url);
   }
 
+  cargarPuntajeRutina(id:string){
+    const url = URL_SERVICIOS + `puntuacion/${id}`;
+    return this.http.get(url);
+  }
+
   borrarPuntaje(id: string) {
     let url = URL_SERVICIOS + 'puntuacion/' + id;
 

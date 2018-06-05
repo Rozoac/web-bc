@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Ninio } from '../../models/ninio.model';
 import { NinioService } from '../../services/service.index';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-ninios',
@@ -15,11 +17,15 @@ export class NiniosComponent implements OnInit {
   totalRegistros: 0;
   cargando: boolean = true;
 
-  constructor( public _ninioService: NinioService) {
+  constructor( public _ninioService: NinioService, public router: Router) {
   }
 
   ngOnInit() {
     this.cargarNinios();
+  }
+
+  infoNinio ( ruta ) {
+      this.router.navigate(['/info-ninio', ruta])
   }
 
   cargarNinios() {
